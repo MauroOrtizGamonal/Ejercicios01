@@ -1,0 +1,21 @@
+<div>
+    <h2>Calculadora de Divisas</h2>
+  
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" [(ngModel)]="cantidad" id="cantidad">
+  
+    <label for="moneda">Moneda:</label>
+    <select [(ngModel)]="monedaOrigen" id="moneda">
+      <option *ngFor="let moneda of monedas" [ngValue]="moneda">{{ moneda.descripcion }}</option>
+    </select>
+  
+    <label for="monedaDestino">Convertir a:</label>
+    <select [(ngModel)]="monedaDestino" id="monedaDestino">
+      <option *ngFor="let moneda of monedas" [ngValue]="moneda">{{ moneda.descripcion }}</option>
+    </select>
+  
+    <button (click)="convertirDivisa()">Convertir</button>
+  
+    <p *ngIf="resultado">Resultado: {{ resultado }}</p>
+  </div>
+  
